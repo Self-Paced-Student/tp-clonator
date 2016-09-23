@@ -19,9 +19,13 @@ describe('clonator', function () {
 
   it('should clone composite values', function () {
     clonator(mocks.arr).should.eql(mocks.arr);
+    clonator(mocks.arr).should.not.equal(mocks.arr);
     clonator(mocks.obj).should.eql(mocks.obj);
+    clonator(mocks.obj).should.not.equal(mocks.obj);
     clonator(mocks.nestedArr).should.eql(mocks.nestedArr);
+    clonator(mocks.nestedArr).should.not.equal(mocks.nestedArr);
     clonator(mocks.nestedObj).should.eql(mocks.nestedObj);
+    clonator(mocks.nestedObj).should.not.equal(mocks.nestedObj);
   });
 
 });
