@@ -28,4 +28,17 @@ describe('clonator', function () {
     clonator(mocks.nestedObj).should.not.equal(mocks.nestedObj);
   });
 
+  it('should deep clone nested composite values', function () {
+    const clonedArr = clonator(mocks.nestedArr);
+    const clonedObj = clonator(mocks.nestedObj);
+    clonedArr[0].should.not.equal(mocks.arr);
+    clonedArr[0].should.eql(mocks.arr);
+    clonedArr[1].should.not.equal(mocks.obj);
+    clonedArr[1].should.eql(mocks.obj);
+    clonedObj.arr.should.not.equal(mocks.arr);
+    clonedObj.arr.should.eql(mocks.arr);
+    clonedObj.obj.should.not.equal(mocks.obj);
+    clonedObj.obj.should.eql(mocks.obj);
+  });
+
 });
