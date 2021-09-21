@@ -28,6 +28,12 @@ describe('clonator', function () {
     clonator(mocks.nestedObj).should.not.equal(mocks.nestedObj);
   });
 
+  it('should ignore prototype properties', function () {
+    mocks.obj.constructor.prototype.foo = 'foo';
+    const clonedObj = clonator(mocks.obj);
+    Object.prototype.hasOwnProperty.call(clonedObj, 'foo').should.be.false;
+  });
+
   it('should deep clone nested composite values', function () {
     const clonedArr = clonator(mocks.nestedArr);
     const clonedObj = clonator(mocks.nestedObj);
