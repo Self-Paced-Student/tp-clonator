@@ -20,6 +20,7 @@ function clonator (source) {
   //   }
   //   return res;
   // } else return source;
+  console.log("Hi");
 }
 
 module.exports = clonator;
