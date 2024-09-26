@@ -7,6 +7,7 @@
 // the copy should not affect the source in any way.
 
 function clonator (source) {
+   // hello
    if (Array.isArray(source)) {
     return source.map(function (el) {
       return clonator(el);
