@@ -6,6 +6,8 @@
 // enumerable properties as the source, but modifying
 // the copy should not affect the source in any way.
 
+// Now it should really pass
+
 function clonator (source) {
    if (Array.isArray(source)) {
     return source.map(function (el) {
