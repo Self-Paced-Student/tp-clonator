@@ -5,6 +5,7 @@
 // it gets passed. The generated copy should have the same own
 // enumerable properties as the source, but modifying
 // the copy should not affect the source in any way.
+// Just a little comment
 
 function clonator (source) {
    if (Array.isArray(source)) {
